@@ -1,0 +1,24 @@
+bundle:
+  name: poc_repo_deploy
+ 
+include:
+  - resources/*.yml
+ 
+variables:
+  git_branch:
+    default: develop
+ 
+targets:
+  dev:
+    mode: development
+    default: true
+  shared_dev:
+    workspace:
+      root_path: /Workspace/Shared/.bundle/poc_repo_deploy/shared_dev
+    variables:
+      git_branch: develop
+  prod_simulado:
+    workspace:
+      root_path: /Workspace/Shared/.bundle/poc_repo_deploy/prod_simulado
+    variables:
+      git_branch: main
